@@ -1,0 +1,62 @@
+\usepackage{fullpage}
+\usepackage{titlesec}    %allows us to use the \titleformat commands at the end of this doc
+\usepackage{helvet}      %change font family to helvetica
+\usepackage[numbers,sort,super]{natbib}  %"Nature"-like superscript format.  Good results are with \bibliographystyle{unsrtnat}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{subfigure}
+\usepackage{hyperref,url}  %for nice cross-references within
+\usepackage{color}
+\usepackage{multirow}
+\usepackage{pdfsync}
+\usepackage{rotating}
+\usepackage{sfmath}
+\usepackage{pgf,tikz} %see http://www.texample.net/tikz/examples/ for awesome examples of how this can beused
+\usepackage{lipsum}   %allows inserting of dummy text
+
+\usetikzlibrary{arrows,positioning} 
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,          % color of internal links (change box color with linkbordercolor)
+  citecolor=blue,        % color of links to bibliography
+  filecolor=blue,      % color of file links
+  urlcolor=blue           % color of external links
+}
+
+\renewcommand{\familydefault}{\sfdefault} 
+
+\textwidth = 7.1 in
+\textheight = 9.8 in
+\oddsidemargin = 0.2 in
+\evensidemargin = 0.7 in
+\topmargin = 0.1 in
+\headheight = 15 pt
+\headsep = 0.2 in
+\parindent = 0.25in
+\voffset = -1.0in
+\hoffset = -0.5in
+\hyphenation{me-la-no-gas-ter}
+\hyphenation{dro-so-phi-la}
+\hyphenation{si-mu-lans}
+\hyphenation{pipe-line}
+\makeatletter 
+
+\def\paragraph{\@startsection %
+     {paragraph}{4}{\z@}{0ex plus 0ex minus 0ex}{-1em}{\normalsize\bf\sffamily}}
+\def\subparagraph{\@startsection %
+     {subparagraph}{5}{\z@}{0ex plus 0ex minus 0ex}{-1em}{\normalsize\it\sffamily}}
+
+%Change sections to A, B, C, etc., subsections to A.1, A.2, B.1, etc., and subsubsections to A.1.1, A.1.2, etc. 
+\renewcommand {\thesection} {\@Alph\c@section}
+\renewcommand {\thesubsection}{\thesection.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\thesection.\arabic{subsection}.\arabic{subsubsection}}
+\renewcommand {\thefigure}{\textbf{\thesection.\arabic{subsection}.\arabic{figure}}}
+\renewcommand {\thetable}{\textbf{\thesection.\arabic{subsection}.\arabic{table}}}
+
+%Change section, etc., commands so that there is no newline @ end and minimal padding
+\titleformat{\section}[runin]{\normalsize\bf\sffamily}{\thesection}{5pt}{}
+\titleformat{\subsection}[runin]{\normalsize\bf\sffamily}{\thesubsection}{5pt}{}
+\titleformat{\subsubsection}[runin]{\normalsize\bf\sffamily}{\thesubsubsection}{5pt}{}
+
+\makeatother 
