@@ -1,10 +1,10 @@
 \usepackage{fullpage}
 \usepackage{titlesec}    %allows us to use the \titleformat commands at the end of this doc
 \usepackage{helvet}      %change font family to helvetica
-\usepackage[numbers,sort,super]{natbib}  %"Nature"-like superscript format.  Good results are with \bibliographystyle{unsrtnat}
+\usepackage[numbers,sort&compress,super]{natbib}  %"Nature"-like superscript format.  Good results are with \bibliographystyle{unsrtnat}
 \usepackage{graphicx}
 \usepackage{wrapfig}
-\usepackage{subfigure}
+\usepackage{caption,subcaption}
 \usepackage{hyperref,url}  %for nice cross-references within
 \usepackage{color}
 \usepackage{multirow}
@@ -14,7 +14,7 @@
 \usepackage{pgf,tikz} %see http://www.texample.net/tikz/examples/ for awesome examples of how this can beused
 \usepackage{lipsum}   %allows inserting of dummy text
 \usepackage[top=0.5in, bottom=0.5in, left=0.5in, right=0.5in]{geometry}
-\usetikzlibrary{arrows,positioning} 
+\usetikzlibrary{arrows,positioning,calc} 
 
 \hypersetup{
   colorlinks=true,
@@ -51,9 +51,12 @@
 \renewcommand {\thesection} {\@Alph\c@section}
 \renewcommand {\thesubsection}{\thesection.\arabic{subsection}}
 \renewcommand{\thesubsubsection}{\thesection.\arabic{subsection}.\arabic{subsubsection}}
-\renewcommand {\thefigure}{\textbf{\thesection.\arabic{subsection}.\arabic{figure}}}
-\renewcommand {\thetable}{\textbf{\thesection.\arabic{subsection}.\arabic{table}}}
-
+\renewcommand {\thefigure}{\textbf{\arabic{figure}}}
+\renewcommand {\thetable}{\textbf{\arabic{table}}}
+%\renewcommand {\thefigure}{\textbf{\thesection\arabic{figure}}}
+%\renewcommand {\thefigure}{\textbf{\thesection.\arabic{subsection}.\arabic{subsubsection}.\arabic{figure}}}
+%\renewcommand {\thetable}{\textbf{\thesection.\arabic{subsection}.\arabic{subsubsection}.\arabic{table}}}
+%\renewcommand {\thetable}{\textbf{\thesection\arabic{table}}}
 %Change section, etc., commands so that there is no newline @ end and minimal padding
 \titleformat{\section}[runin]{\normalsize\bf\sffamily}{\thesection}{5pt}{}
 \titleformat{\subsection}[runin]{\normalsize\bf\sffamily}{\thesubsection}{5pt}{}
